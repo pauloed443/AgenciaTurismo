@@ -7,28 +7,28 @@
 		private $_tipo;
 
 		public function setIdUsuario($value){
-			$_idusuario = $value;
+			this->$_idusuario = $value;
 			return this;
 		}
 		public function getIdUsuario(){
 			return this->$_idusuario;
 		}
 		public function setLogin($value){
-			$_login = $value;
+			this->$_login = $value;
 			return this;
 		}
 		public function getLogin(){
 			return this->$_login;
 		}
 		public function setSenha($value){
-			$_senha = $value;
+			this->$_senha = $value;
 			return this;
 		}
 		public function getSenha(){
 			return this->$_senha;
 		}
 		public function setTipo($value){
-			$_tipo = $value;
+			this->$_tipo = $value;
 			return this;
 		}
 		public function getTipo(){
