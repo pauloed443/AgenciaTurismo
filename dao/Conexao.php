@@ -1,7 +1,7 @@
 <?php
-	public class Conexao
+	class Conexao
 	{
-		private static function conexao(){
+		private function conexao(){
 			try {
 				$conn = new PDO('mysql:host=localhost;dbname=agenciaturismo', 'root', '');
 				$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -14,7 +14,8 @@
 		}
 
 		public function getConnection(){
-			return conexao();
+			$conn = new conexao();
+			return $conn;
 		}
 	}
 ?>
