@@ -1,5 +1,5 @@
 <?php
-	public class Conexao extends
+	public class Conexao
 	{
 		private static function conexao(){
 			try {
