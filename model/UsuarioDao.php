@@ -1,19 +1,20 @@
 <?php
+	require_once("dao/Conexao.php");
+	include("UsuarioBEAN.php");
+
 	class UsuarioDAO {
 		
 		private $db;
 		private $usuario;
 
 		function __construct(){
-			require_once("dao/Conexao.php");
-			include("UsuarioBEAN.php");
-			$this->db = Conexao::getConnection();
-			$this->usuario = array();
+			$db = Conexao::getConnection();
+			$usuario = array();
 		}
-/*
+
 		public function getUsuario(){
 			try{
-				$stmt = $this->db->prepare("SELECT * FROM usuario");
+				$stmt = $db->prepare("SELECT * FROM usuario");
 				$stmt->execute();
 				$linhas = $stmt->fetchAll();
 				$usuariobean = new UsuarioBEAN();
@@ -31,7 +32,7 @@
 			}
 			return $this->usuario;
 		}
-		*/
+		/*
 		public function getUsuario(){
 			$query = $this->db->query("SELECT * FROM usuario");
 			while($rows=$query->fetch(PDO::FETCH_ASSOC)){
@@ -39,7 +40,7 @@
 			}
 			return $this->usuario;
 		}
-		
+		*/
 		public function checkInUsuario($login, $senha){
 			$consulta = $db->query("");
 		}
