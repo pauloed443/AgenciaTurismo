@@ -4,6 +4,6 @@
 	<title>Inicio</title>
 </head>
 <body>
-	<?php require_once("view/Usuario.php"); ?>
+	<?php require_once("view/TelaConsultaUsuario.php"); ?>
 </body>
 </html>

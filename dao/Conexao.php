@@ -1,21 +1,20 @@
 <?php
 	class Conexao
 	{
-		private function conexao(){
-			try {
-				$conn = new PDO('mysql:host=localhost;dbname=agenciaturismo', 'root', '');
-				$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-				$conn->exec("SET CHARACTER SET utf8");
-			} catch (Exception $e) {
-				die("Erro na conexão com o banco de dados: ".$e->getMessage());
-				echo "Erro de conexão na linha ".$e->getLine();
-			}
-			return $conn;
-		}
-
-		public function getConnection(){
-			$conn = new conexao();
-			return $conn;
+		public static $conn;
+ 
+    	private function __construct() {
+        	//
+    	}
+		public static function getConexao() {
+			if (!isset(self::$conn)) {
+				self::$conn = new PDO('mysql:host=localhost;dbname=agenciaturismo', 'root', '',
+ 			array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
+				self::$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            	self::$conn->setAttribute(PDO::ATTR_ORACLE_NULLS, PDO::NULL_EMPTY_STRING);
+				
+			} 
+			return self::$conn;
 		}
 	}
 ?>

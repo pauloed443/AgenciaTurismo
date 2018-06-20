@@ -1,3 +1,6 @@
+<?php 
+	require_once "controller/UsuarioController.php";
+ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,9 +9,7 @@
 <body>
 	<pre>
 		<?php 
-		include("controller/UsuarioController.php");
-		$res = UsuarioController::getUsuario();
-		echo $res;
+		echo ''.UsuarioController::listaUsuario(1);
 		?>
 	</pre>
 </body>

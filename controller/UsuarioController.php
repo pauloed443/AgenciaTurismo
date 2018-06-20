@@ -1,10 +1,11 @@
 <?php
+	require_once "dao/UsuarioDao.php";
+	require_once "model/Usuario.php";
+
 	class UsuarioController
 	{
-		public function getUsuario(){
-			require_once("model/UsuarioDao.php");
-			$ud = new UsuarioDao();
-			return $ud->getUsuario();
+		public function listaUsuario($id){
+			return UsuarioDao::buscarUsuario($id);
 		}
 	}
 ?>
